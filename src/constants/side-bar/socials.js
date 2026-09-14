@@ -1,16 +1,16 @@
 import {
-  FiTwitter,
   FiInstagram,
   FiGithub,
   FiLinkedin,
   FiCodepen,
 } from 'react-icons/fi'
+import { FaXTwitter } from "react-icons/fa6";
 
 export const SocialLinks = [
   {
-    name: 'LinkedIn',
-    path: 'https://linkedin.com/in/emreerdendev',
-    icon: <FiLinkedin />,
+    name: 'X',
+    path: 'https://x.com/emreerdendev',
+    icon: <FaXTwitter />,
   },
   {
     name: 'GitHub',
@@ -18,9 +18,9 @@ export const SocialLinks = [
     icon: <FiGithub />,
   },
   {
-    name: 'Twitter',
-    path: 'https://twitter.com/emreerdendev',
-    icon: <FiTwitter />,
+    name: 'LinkedIn',
+    path: 'https://linkedin.com/in/emreerdendev',
+    icon: <FiLinkedin />,
   },
   {
     name: 'Codepen',

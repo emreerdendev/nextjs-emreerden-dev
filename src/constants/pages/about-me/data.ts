@@ -103,7 +103,7 @@ export const CertificationData: Certification[] = [
     issuer: 'freeCodeCamp',
     date: 'Issued Nov 2022',
     credentialUrl:
-      'https://freecodecamp.org/certification/emr3rden/responsive-web-design',
+      'https://freecodecamp.org/certification/emreerdendev/responsive-web-design',
   },
   {
     name: 'CSS Certificate',
