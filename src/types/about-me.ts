@@ -23,3 +23,10 @@ export interface Event {
   date: string
   location: string
 }
+
+export interface Organization {
+  name: string
+  role: string
+  date: string
+  link: string
+}

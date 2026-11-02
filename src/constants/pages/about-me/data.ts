@@ -1,4 +1,19 @@
-import { Education, Certification, Language, Event } from '@/types/about-me'
+import {
+  Education,
+  Certification,
+  Language,
+  Event,
+  Organization,
+} from '@/types/about-me'
+
+export const OrganizationData: Organization[] = [
+  {
+    name: 'GDG Ankara',
+    role: 'Crew',
+    date: 'Feb 2026 - Present',
+    link: 'https://gdg.community.dev/gdg-ankara/',
+  },
+]
 
 export const EventData: Event[] = [
   {

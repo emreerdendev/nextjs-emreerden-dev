@@ -11,12 +11,19 @@ import {
   EducationData,
   EventData,
   LanguageData,
+  OrganizationData,
 } from '@/constants/pages/about-me/data'
 import CertificationCardComponent from './about-me/certification-card'
 import EducationCardComponent from './about-me/education-card'
 import EventCardComponent from './about-me/event-card'
+import OrganizationCardComponent from './about-me/organization-card'
 
-type AboutTab = 'Education' | 'Certifications' | 'Languages' | 'Events'
+type AboutTab =
+  | 'Education'
+  | 'Certifications'
+  | 'Languages'
+  | 'Organizations'
+  | 'Events'
 
 const AboutPageComponent = () => {
   const age = calculateAge(new Date('2000-11-09'))
@@ -25,6 +32,7 @@ const AboutPageComponent = () => {
     'Education',
     'Certifications',
     'Languages',
+    'Organizations',
     'Events',
   ]
 
@@ -180,6 +188,18 @@ const AboutPageComponent = () => {
                   issuer={cert.issuer}
                   date={cert.date}
                   credentialUrl={cert.credentialUrl}
+                />
+              ))}
+            </div>
+          ) : tab === 'Organizations' ? (
+            <div className="ml-2 flex flex-col border-l dark:border-zinc-600">
+              {OrganizationData.map((organization, index) => (
+                <OrganizationCardComponent
+                  key={index}
+                  name={organization.name}
+                  role={organization.role}
+                  date={organization.date}
+                  link={organization.link}
                 />
               ))}
             </div>
