@@ -1,0 +1,36 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "emreerden-dev",
+  // worker.ts wraps OpenNext's .open-next/worker.js (browser cache headers).
+  "main": "worker.ts",
+  "compatibility_date": "2026-10-19",
+  "compatibility_flags": ["nodejs_compat"],
+  // Don't inject esbuild's `__name` helper: next-themes serializes a function
+  // into an inline <script>, which would reference the helper in the browser,
+  // where it doesn't exist, and break every worker-rendered page.
+  "keep_names": false,
+  // Reachable only via the custom domains below. The auto-assigned
+  // *.workers.dev and preview URLs would serve a duplicate of the site that
+  // search engines could index.
+  "workers_dev": false,
+  "preview_urls": false,
+  // Logs are sampled: 10% is enough to spot errors, and log events past the
+  // plan's monthly allowance are billed.
+  "observability": { "enabled": true, "head_sampling_rate": 0.1 },
+  // Hard ceiling per request so a pathological render can't burn billed CPU
+  // time. Pages are prerendered, so real requests use a small fraction.
+  "limits": { "cpu_ms": 2000 },
+  // Custom domains — Cloudflare creates the DNS records and SSL certificate.
+  "routes": [
+    { "pattern": "emreerden.dev", "custom_domain": true },
+    { "pattern": "www.emreerden.dev", "custom_domain": true },
+  ],
+  "assets": {
+    "directory": ".open-next/assets",
+    "binding": "ASSETS",
+  },
+  // next/image optimization through Cloudflare Images. next.config.mjs limits
+  // remote sources to this account's repo thumbnails, which keeps the number
+  // of (billable) unique transformations small and fixed.
+  "images": { "binding": "IMAGES" },
+}
