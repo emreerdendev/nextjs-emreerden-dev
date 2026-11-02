@@ -141,7 +141,7 @@ const AboutPageComponent = () => {
           initial={{ y: 20, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
           transition={{ duration: 0.2, delay: 8 * 0.1 }}
-          className="flex w-full max-w-max overflow-x-auto rounded-md border bg-zinc-100 p-1 dark:border-zinc-700 dark:bg-zinc-800"
+          className="no-scrollbar flex w-full max-w-max overflow-x-auto rounded-md border bg-zinc-100 p-1 dark:border-zinc-700 dark:bg-zinc-800"
         >
           {tabs.map((t) => (
             <Button
