@@ -10,7 +10,7 @@ export const metadata: Metadata = {
 }
 
 const StudiesPage = async () => {
-  const repos = await getRepos('study').catch(() => [])
+  const repos = await getRepos('study')
 
   return <StudiesPageComponent repos={repos} />
 }

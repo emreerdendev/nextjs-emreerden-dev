@@ -15,13 +15,24 @@ interface GitHubRepo {
 
 /**
  * Fetch the user's repositories filtered by a topic, mapped to the shape the
- * UI needs and sorted by star count (desc). Runs on the server and is cached
- * for an hour so the GitHub API isn't hit on every request.
+ * UI needs and sorted by star count (desc). Runs at build time only: the pages
+ * are static and a scheduled rebuild (GitHub Actions) refreshes the data, so
+ * no runtime cache storage is needed on Cloudflare.
+ *
+ * Errors are not swallowed: a failed request fails the build, so the live
+ * deployment keeps its repo list instead of shipping an empty page.
  */
 export async function getRepos(topic: 'project' | 'study'): Promise<Repo[]> {
   const response = await fetch(REPOS_URL, {
-    headers: { Accept: 'application/vnd.github+json' },
-    next: { revalidate: 3600 },
+    headers: {
+      Accept: 'application/vnd.github+json',
+      // Optional, but unauthenticated requests are limited to 60/hour per IP
+      // and build machines share IPs, so set it as a build variable.
+      ...(process.env.GITHUB_TOKEN && {
+        Authorization: `Bearer ${process.env.GITHUB_TOKEN}`,
+      }),
+    },
+    cache: 'force-cache',
   })
 
   if (!response.ok) {
