@@ -2,19 +2,41 @@ import { Tool } from '@/types/whatiuse'
 
 export const VSCode: Tool[] = [
   {
-    name: 'GitHub Copilot',
-    link: 'https://marketplace.visualstudio.com/items?itemName=GitHub.copilot',
+    name: 'Claude Code for VS Code',
+    link: 'https://open-vsx.org/extension/Anthropic/claude-code',
     category: 'AI Assistant',
   },
   {
-    name: 'GitHub Copilot Chat',
-    link: 'https://marketplace.visualstudio.com/items?itemName=GitHub.copilot-chat',
+    name: 'Expo Tools',
+    link: 'https://open-vsx.org/extension/expo/vscode-expo-tools',
+    category: 'Framework Tools',
+  },
+  {
+    name: 'GraphQL: Language Feature Support',
+    link: 'https://open-vsx.org/extension/GraphQL/vscode-graphql',
+    category: 'Language Support',
+  },
+  {
+    name: 'GraphQL: Syntax Highlighting',
+    link: 'https://open-vsx.org/extension/GraphQL/vscode-graphql-syntax/changes',
+    category: 'Syntax Highlighting',
+  },
+  {
+    name: 'Shopify Liquid',
+    link: 'https://open-vsx.org/extension/Shopify/theme-check-vscode/changes',
+    category: 'Language Support',
+  },
+  {
+    name: 'Shopify Dev Assistant',
     category: 'AI Assistant',
   },
   {
-    name: 'ChatGPT',
-    link: 'https://marketplace.visualstudio.com/items?itemName=zhang-renyang.chat-gpt',
-    category: 'AI Assistant',
+    name: 'Shopify Liquid Template Snippets',
+    category: 'Snippets',
+  },
+  {
+    name: 'Polaris for VS Code',
+    category: 'IntelliSense',
   },
   {
     name: 'GitLens - Git supercharged',
@@ -35,11 +57,6 @@ export const VSCode: Tool[] = [
     name: 'Error Lens',
     link: 'https://marketplace.visualstudio.com/items?itemName=usernamehw.errorlens',
     category: 'Linting',
-  },
-  {
-    name: 'Console Ninja',
-    link: 'https://marketplace.visualstudio.com/items?itemName=WallabyJs.console-ninja',
-    category: 'Debugging',
   },
   {
     name: 'Code Spell Checker',
@@ -82,14 +99,9 @@ export const VSCode: Tool[] = [
     category: 'IntelliSense',
   },
   {
-    name: 'Quokka.js',
-    link: 'https://marketplace.visualstudio.com/items?itemName=WallabyJs.quokka-vscode',
-    category: 'Debugging',
-  },
-  {
-    name: 'Turbo Console Log',
-    link: 'https://marketplace.visualstudio.com/items?itemName=ChakrounAnas.turbo-console-log',
-    category: 'Debugging',
+    name: 'Prisma',
+    link: 'https://marketplace.visualstudio.com/items?itemName=Prisma.prisma',
+    category: 'Language Support',
   },
   {
     name: 'CSS Peek',
@@ -102,13 +114,28 @@ export const VSCode: Tool[] = [
     category: 'Visualization',
   },
   {
-    name: 'Markdown Preview Enhanced',
-    link: 'https://marketplace.visualstudio.com/items?itemName=shd101wyy.markdown-preview-enhanced',
-    category: 'Preview',
+    name: 'Vue Language Features (Volar)',
+    link: 'https://marketplace.visualstudio.com/items?itemName=Vue.volar',
+    category: 'Language Support',
   },
   {
-    name: 'vscode-pdf',
-    link: 'https://marketplace.visualstudio.com/items?itemName=tomoki1207.pdf',
+    name: 'TypeScript Vue Plugin (Volar)',
+    link: 'https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin',
+    category: 'Language Support',
+  },
+  {
+    name: 'Vue VSCode Snippets',
+    link: 'https://marketplace.visualstudio.com/items?itemName=sdras.vue-vscode-snippets',
+    category: 'Snippets',
+  },
+  {
+    name: 'Vetur',
+    link: 'https://marketplace.visualstudio.com/items?itemName=octref.vetur',
+    category: 'Language Support',
+  },
+  {
+    name: 'Markdown Preview Enhanced',
+    link: 'https://marketplace.visualstudio.com/items?itemName=shd101wyy.markdown-preview-enhanced',
     category: 'Preview',
   },
   {
@@ -147,6 +174,11 @@ export const VSCode: Tool[] = [
     category: 'Icon Theme',
   },
   {
+    name: 'Quokka.js',
+    link: 'https://marketplace.visualstudio.com/items?itemName=WallabyJs.quokka-vscode',
+    category: 'Debugging',
+  },
+  {
     name: 'Color Highlight',
     link: 'https://marketplace.visualstudio.com/items?itemName=naumovs.color-highlight',
     category: 'Visualization',
@@ -162,38 +194,43 @@ export const VSCode: Tool[] = [
     category: 'Visualization',
   },
   {
-    name: 'vscode-faker',
-    link: 'https://marketplace.visualstudio.com/items?itemName=deerawan.vscode-faker',
-    category: 'Mock Data',
-  },
-  {
     name: 'CodeSnap',
     link: 'https://marketplace.visualstudio.com/items?itemName=adpyke.codesnap',
     category: 'Screenshot',
   },
   {
-    name: 'Vue Language Features (Volar)',
-    link: 'https://marketplace.visualstudio.com/items?itemName=Vue.volar',
-    category: 'Language Support',
+    name: 'vscode-pdf',
+    link: 'https://marketplace.visualstudio.com/items?itemName=tomoki1207.pdf',
+    category: 'Preview',
   },
   {
-    name: 'TypeScript Vue Plugin (Volar)',
-    link: 'https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin',
-    category: 'Language Support',
+    name: 'vscode-faker',
+    link: 'https://marketplace.visualstudio.com/items?itemName=deerawan.vscode-faker',
+    category: 'Mock Data',
   },
   {
-    name: 'Vue VSCode Snippets',
-    link: 'https://marketplace.visualstudio.com/items?itemName=sdras.vue-vscode-snippets',
-    category: 'Snippets',
+    name: 'Turbo Console Log',
+    link: 'https://marketplace.visualstudio.com/items?itemName=ChakrounAnas.turbo-console-log',
+    category: 'Debugging',
   },
   {
-    name: 'Vetur',
-    link: 'https://marketplace.visualstudio.com/items?itemName=octref.vetur',
-    category: 'Language Support',
+    name: 'Console Ninja',
+    link: 'https://marketplace.visualstudio.com/items?itemName=WallabyJs.console-ninja',
+    category: 'Debugging',
   },
   {
-    name: 'Prisma',
-    link: 'https://marketplace.visualstudio.com/items?itemName=Prisma.prisma',
-    category: 'Language Support',
+    name: 'GitHub Copilot',
+    link: 'https://marketplace.visualstudio.com/items?itemName=GitHub.copilot',
+    category: 'AI Assistant',
+  },
+  {
+    name: 'GitHub Copilot Chat',
+    link: 'https://marketplace.visualstudio.com/items?itemName=GitHub.copilot-chat',
+    category: 'AI Assistant',
+  },
+  {
+    name: 'ChatGPT',
+    link: 'https://marketplace.visualstudio.com/items?itemName=zhang-renyang.chat-gpt',
+    category: 'AI Assistant',
   },
 ]
