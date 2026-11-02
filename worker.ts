@@ -28,6 +28,28 @@ function forBrowsers(response: Response): Response {
   return fixed
 }
 
+/**
+ * OpenNext only sets Cache-Control on optimized images from local files. The
+ * remote repo thumbnails come back without it, so browsers re-request (and
+ * re-transform) them on every visit. A day keeps updated thumbnails showing
+ * up quickly.
+ */
+function cacheRemoteImages(request: Request, response: Response): Response {
+  if (
+    response.status !== 200 ||
+    response.headers.has('cache-control') ||
+    new URL(request.url).pathname !== '/_next/image'
+  )
+    return response
+
+  const cached = new Response(response.body, response)
+  cached.headers.set(
+    'cache-control',
+    'public, max-age=86400, stale-while-revalidate=604800'
+  )
+  return cached
+}
+
 const worker = {
   async fetch(request: Request, env: unknown, ctx: unknown) {
     // One canonical host (as on Vercel): www → apex, keeping path and query.
@@ -37,7 +59,8 @@ const worker = {
       return Response.redirect(url.toString(), 301)
     }
 
-    return forBrowsers(await handler.fetch(request, env, ctx))
+    const response = await handler.fetch(request, env, ctx)
+    return cacheRemoteImages(request, forBrowsers(response))
   },
 }
 
