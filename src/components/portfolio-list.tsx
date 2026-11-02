@@ -30,7 +30,7 @@ const PortfolioListComponent = (props: Props) => {
               src={repo.img}
               alt={repo.name}
               fill
-              sizes="100%"
+              sizes="(min-width: 1024px) 280px, 352px"
               className="rounded-md object-cover lg:rounded-bl-md lg:rounded-br-none lg:rounded-tl-md lg:rounded-tr-none"
             />
           </div>

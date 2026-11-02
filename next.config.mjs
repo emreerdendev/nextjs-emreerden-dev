@@ -15,16 +15,15 @@ const nextConfig = {
     ]
   },
   images: {
+    // Only this account's repo thumbnails. Every distinct image is a billable
+    // Cloudflare Images transformation, so the optimizer must not accept
+    // arbitrary GitHub URLs.
     remotePatterns: [
       {
         protocol: 'https',
-        hostname: '**.githubusercontent.com',
+        hostname: 'raw.githubusercontent.com',
         port: '',
-      },
-      {
-        protocol: 'https',
-        hostname: 'github.com',
-        port: '',
+        pathname: '/emreerdendev/**',
       },
     ],
   },

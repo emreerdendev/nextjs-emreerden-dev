@@ -41,7 +41,7 @@ export async function getRepos(topic: 'project' | 'study'): Promise<Repo[]> {
       desc: repo.description ?? '',
       stars: repo.stargazers_count,
       topics: repo.topics,
-      img: `https://github.com/${GITHUB_USER}/${repo.name}/blob/main/thumbnail/${repo.name}.png?raw=true`,
+      img: `https://raw.githubusercontent.com/${GITHUB_USER}/${repo.name}/main/thumbnail/${repo.name}.png`,
     }))
     .sort((a, b) => b.stars - a.stars)
 }
