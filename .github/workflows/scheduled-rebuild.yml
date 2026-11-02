@@ -1,0 +1,27 @@
+# Pages are static, so the Studies/Projects repo lists (stars, new repos) only
+# change on a build. This triggers a Cloudflare Workers Builds deploy once a day
+# to keep them fresh. The deploy hook URL lives in the repository secret
+# CLOUDFLARE_DEPLOY_HOOK_URL (Settings → Secrets and variables → Actions).
+name: Scheduled rebuild
+
+on:
+  schedule:
+    - cron: '0 4 * * *' # every day at 04:00 UTC (07:00 Turkey)
+  workflow_dispatch:
+
+permissions: {}
+
+jobs:
+  rebuild:
+    runs-on: ubuntu-latest
+    timeout-minutes: 2
+    steps:
+      - name: Trigger Cloudflare deploy hook
+        env:
+          DEPLOY_HOOK_URL: ${{ secrets.CLOUDFLARE_DEPLOY_HOOK_URL }}
+        run: |
+          if [ -z "$DEPLOY_HOOK_URL" ]; then
+            echo "CLOUDFLARE_DEPLOY_HOOK_URL secret is not set" >&2
+            exit 1
+          fi
+          curl --fail --silent --show-error -X POST "$DEPLOY_HOOK_URL"
