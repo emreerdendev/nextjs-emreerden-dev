@@ -1,13 +1,19 @@
-export interface WhatIUse {
+export interface Tool {
   name: string
-  path:
-    | string
-    | {
-        website?: string
-        firefox?: string
-        chrome?: string
-      }
-  browser?: ('Firefox' | 'Chrome')[]
+  link: string
+  category: string
+}
+
+export type BrowserPlatform = 'Firefox' | 'Chrome'
+
+export interface BrowserExtension {
+  name: string
+  link?: string
+  category: string
+  platforms: {
+    name: BrowserPlatform
+    link?: string
+  }[]
 }
 
 export interface Kit {
@@ -15,5 +21,5 @@ export interface Kit {
     title: string
     specs: string
   }
-  description: string
+  type: string
 }

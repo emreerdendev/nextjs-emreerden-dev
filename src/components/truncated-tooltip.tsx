@@ -13,7 +13,7 @@ type Props = {
  * value in a tooltip on hover. */
 const TruncatedTooltip = ({ text }: Props) => {
   return (
-    <TooltipProvider>
+    <TooltipProvider delayDuration={100}>
       <Tooltip>
         <TooltipTrigger className="overflow-hidden overflow-ellipsis whitespace-nowrap">
           {text}

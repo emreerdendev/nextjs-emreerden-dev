@@ -7,6 +7,7 @@ import { motion } from 'framer-motion'
 import PageHeaderComponent from '@/components/page-header'
 import TruncatedTooltip from '@/components/truncated-tooltip'
 import { Button } from '@/components/ui/button'
+import WhatIUseTable, { WhatIUseTableRow } from '@/components/whatiuse-table'
 //
 import { Equipment, Gear, Setup } from '@/constants/pages/whatiuse/kit'
 //
@@ -22,16 +23,21 @@ const tabData: Record<Tab, Kit[]> = {
   Equipment,
 }
 
+const columns = [
+  { label: 'Name/Specs', className: 'w-[60%]' },
+  { label: 'Type', className: 'w-1/3' },
+]
+
 const KitRow = ({ item }: { item: Kit }) => {
   return (
-    <div className="flex h-11 w-full items-center gap-x-4 border-b px-4 text-sm text-zinc-950 last:border-b-0 hover:bg-zinc-100 dark:border-zinc-700 dark:text-zinc-50 dark:hover:bg-zinc-800">
+    <WhatIUseTableRow>
       <div className="flex w-[60%] items-center gap-x-2">
         <span className="text-nowrap">{item.name.title} </span>
         <span className="text-zinc-500 dark:text-zinc-500">{'>'}</span>{' '}
         <TruncatedTooltip text={item.name.specs} />
       </div>
-      <div className="w-1/3">{item.description}</div>
-    </div>
+      <div className="w-1/3">{item.type}</div>
+    </WhatIUseTableRow>
   )
 }
 
@@ -58,33 +64,24 @@ const KitPageComponent = () => {
               onClick={() => setTab(b)}
               variant={'secondary'}
               size={'sm'}
-              className={cn('h-8 w-full hover:text-zinc-500 dark:hover:text-zinc-400', {
-                'bg-white hover:bg-white hover:text-zinc-900 dark:bg-zinc-700 dark:hover:bg-zinc-700 dark:hover:text-zinc-50':
-                  tab === b,
-              })}
+              className={cn(
+                'h-8 w-full hover:text-zinc-500 dark:hover:text-zinc-400',
+                {
+                  'bg-white hover:bg-white hover:text-zinc-900 dark:bg-zinc-700 dark:hover:bg-zinc-700 dark:hover:text-zinc-50':
+                    tab === b,
+                }
+              )}
             >
               {b}
             </Button>
           ))}
         </motion.div>
 
-        <motion.div
-          initial={{ y: 20, opacity: 0 }}
-          animate={{ y: 0, opacity: 1 }}
-          transition={{ duration: 0.2, delay: 5 * 0.1 }}
-          className="w-full overflow-auto"
-        >
-          <div className="w-full min-w-max rounded-lg border dark:border-zinc-700">
-            <div className="flex h-11 w-full select-none items-center gap-x-4 border-b px-4 text-xs text-zinc-500 dark:border-zinc-700 dark:text-zinc-500">
-              <div className="w-[60%]">Name/Specs</div>
-              <div className="w-1/3">Description</div>
-            </div>
-
-            {tabData[tab].map((item, index) => (
-              <KitRow key={index} item={item} />
-            ))}
-          </div>
-        </motion.div>
+        <WhatIUseTable columns={columns}>
+          {tabData[tab].map((item, index) => (
+            <KitRow key={index} item={item} />
+          ))}
+        </WhatIUseTable>
       </div>
     </main>
   )

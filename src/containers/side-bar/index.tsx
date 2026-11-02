@@ -5,7 +5,6 @@ import { usePathname } from 'next/navigation'
 //
 import { cn } from '@/lib/utils'
 //
-import HeadlineComponent from './headline'
 import NavigationComponent from './navigation'
 import ThemeSettingsComponent from './theme-settings'
 import SponsorComponent from './sponsor'
@@ -71,8 +70,6 @@ const SideBarLayout = () => {
           )}
         >
           <div className="no-scrollbar flex h-full w-72 min-w-72 flex-col gap-y-8 overflow-y-auto border-r bg-zinc-50 p-6 dark:border-zinc-700 dark:bg-zinc-800">
-            <HeadlineComponent />
-
             <NavigationComponent />
 
             <SideBarListComponent

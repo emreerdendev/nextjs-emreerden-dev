@@ -1,5 +1,4 @@
 import { VscTools, VscExtensions } from 'react-icons/vsc'
-import { IoExtensionPuzzleOutline } from 'react-icons/io5'
 import { PiDevices } from 'react-icons/pi'
 
 export const WhatIUseRoutes = [
@@ -14,13 +13,8 @@ export const WhatIUseRoutes = [
     icon: <VscTools />,
   },
   {
-    name: 'Browser Exts.',
-    path: '/browser-extensions',
-    icon: <IoExtensionPuzzleOutline />,
-  },
-  {
-    name: 'VSCode Exts.',
-    path: '/vscode-extensions',
+    name: 'Extensions',
+    path: '/extensions',
     icon: <VscExtensions />,
   },
 ]
