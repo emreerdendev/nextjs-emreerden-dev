@@ -19,13 +19,10 @@ export const ExperienceData: Experience[] = [
             description:
               'HR Assistant AI is an AI-powered tool designed to automate and streamline various HR tasks using artificial intelligence. It helps manage in-house questions with automated answers and reduce repetitive tasks.',
             whatIDid: [
-              'Next API endpoints for forgot, new and update password and billing processes',
-              'Modal management for user interactions',
-              'Stripe integration for payment processing',
-              'Error handling and form validations',
-              'Creating Hooks for UI animations',
-              'UI development with shadcn/ui package (Auth, Billing, Profile and Dashboard pages)',
-              'Responsive design for mobile and desktop views',
+              'Built authentication flows (forgot, reset and update password) and billing endpoints with Next.js API Routes.',
+              'Integrated Stripe for payment processing.',
+              'Developed reusable React hooks for animations, error handling, form validation and modal management.',
+              'Built responsive UI for Auth, Billing, Profile and Dashboard pages.',
             ],
             stack: [
               'Next.js',
@@ -46,11 +43,10 @@ export const ExperienceData: Experience[] = [
             description:
               'LiveChatAI, your ultimate AI bot architect. Harnessing the capabilities of ChatGPT, it tailors your data into an interactive chat widget for your website.',
             whatIDid: [
-              'Creating Next API endpoints for actions',
-              'Prisma migrations, schema updates and functions',
-              'React Query mutations, Zustand store management',
-              'UX flow improvements (User deleting, AI Actions)',
-              'UI improvements and bug fixes',
+              'Built Next.js API endpoints for AI chat actions and managed database changes with Prisma (migrations, schema updates).',
+              'Implemented data fetching and state management with TanStack Query (mutations), Zustand and React Context.',
+              'Redesigned UX flows for user deletion and AI actions.',
+              'Delivered responsive UI improvements and fixed production bugs across the dashboard.',
             ],
             stack: [
               'Next.js',
@@ -78,12 +74,10 @@ export const ExperienceData: Experience[] = [
             description: 'AI-Powered Website Audit and CRO & UX Analysis',
             whatIDid: [
               `<b>Developed the entire project by myself</b>`,
-              'Supabase integrations for user authentication processes and data storage',
-              'OpenAI Vision API for image analysis with prompts',
-              'Store management with Zustand',
-              'Stripe integration for payment processing',
-              'PDF export for the audit report with using the Puppeteer',
-              'UI development all over the project',
+              'Implemented user authentication and data storage with Supabase.',
+              'Integrated OpenAI Vision API to analyze websites and generate audit insights through prompt engineering.',
+              'Integrated Stripe payments and built PDF export for audit reports with Puppeteer.',
+              'Developed a fully responsive UI.',
             ],
             stack: [
               'Next.js',
@@ -120,11 +114,10 @@ export const ExperienceData: Experience[] = [
             description:
               'Custom Shopify theme & interactive product configurator for a jeweller (maker of the LOTR "One Ring").',
             whatIDid: [
-              'Built a 3D multi-step Ring Builder (5,000+ LOC) with an interactive WebGL/GLTF ring viewer — real-time model switching, live engraving on the model, variant matching and pricing',
-              'Engineered a custom engraving system — auto font-scaling fit engine and Tengwar/Elvish transcription module',
-              'Designed a unified Stone Quality selector (color/clarity from quality tiers) and multi-region ring sizing (UK/US/EU) with conversion and validation, all compatible with Shopify variants',
-              'Built advanced product-variant UX (dynamic pricing, out-of-stock handling, tooltips, metal-type detection) with responsive, mobile-first layouts from Figma',
-              'Integrated third-party apps (infinite-options), fixed Google Rich Results structured-data errors, and maintained multi-storefront consistency across regional stores (.co.nz / US)',
+              'Built a 3D multi-step Ring Builder with an interactive WebGL/GLTF viewer - real-time model switching, live engraving preview, variant matching and pricing.',
+              'Engineered a custom engraving system with an auto font-scaling fit engine and a Tengwar (Elvish) transcription module.',
+              'Designed a unified Stone Quality selector (color/clarity from quality tiers) and multi-region ring sizing (UK/US/EU) with conversion and validation, all compatible with Shopify variants.',
+              'Built advanced product-variant UX (dynamic pricing, out-of-stock handling, tooltips, metal-type detection) with responsive, mobile-first layouts from Figma.',
             ],
           },
           {
@@ -133,11 +126,11 @@ export const ExperienceData: Experience[] = [
             description:
               'SEO & Structured-Data Shopify App (Admin App + Storefront Theme Extensions).',
             whatIDid: [
-              'Built a Schema.org JSON-LD engine (Organization, Product, Website, FAQ) with live preview, Google Rich Results testing, and storefront theme extensions for SEO injection',
-              'Developed core feature UIs — table management (sortable, assignment, event-driven bulk-edit modals), navigation (collection menus, breadcrumbs, related-search), and billing & SEO audit dashboards (quota, broken-links, keyword tracking)',
-              'Shipped an AI-powered Design Customization feature (800+ LOC) for automated storefront styling with live previews',
-              'Built type-safe GraphQL flows (Code Generator), Shopify metafield management, and an accessible (a11y) design-system component library reused across modules',
-              'Established a comprehensive unit testing suite (MSW mocking for Shopify & internal APIs) and drove performance optimizations — memoization, reduced query filtering, faster metafield saving',
+              'Developed core feature UIs - table management, navigation, and billing & SEO audit dashboards.',
+              'Shipped an AI-powered Design Customization feature for automated storefront styling with live previews.',
+              'Built a Schema.org JSON-LD engine with live preview, Rich Results testing, and storefront extensions for SEO injection.',
+              'Built type-safe GraphQL flows (Code Generator), Shopify metafield management, and an accessible design-system component library reused across modules.',
+              'Established a comprehensive unit testing suite (Mocking for Shopify & internal APIs) and drove performance optimizations — memoization, reduced query filtering,  faster metafield saving.',
             ],
           },
         ],
