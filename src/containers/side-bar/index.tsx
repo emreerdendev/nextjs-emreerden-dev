@@ -84,9 +84,9 @@ const SideBarLayout = () => {
               constName={ContactLinks}
             />
 
-            <ThemeSettingsComponent />
-
             <SponsorComponent />
+
+            <ThemeSettingsComponent />
           </div>
         </div>
       </ClickAwayListener>

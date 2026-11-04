@@ -7,7 +7,8 @@ import { cn } from '@/lib/utils'
 type Props = {
   href: string
   icon: React.ReactNode
-  label: string
+  /** Optional when the icon already says it (e.g. an image button). */
+  label?: string
   /** Small muted text shown on the right (e.g. the link's source). */
   meta?: string
   /** Extra classes for the anchor — used for one-off accents like the sponsor link. */
@@ -42,7 +43,7 @@ const SideBarExternalLink = ({
       <div className="Side-Bar-Card-Hover group-hover:ml-2">
         <div className={cn('text-lg', iconClassName)}>{icon}</div>
 
-        <div className="text-sm">{label}</div>
+        {label && <div className="text-sm">{label}</div>}
       </div>
 
       <div className="flex items-center gap-x-2">
